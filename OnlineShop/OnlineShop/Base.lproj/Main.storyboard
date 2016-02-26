@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ujP-Bm-3LX">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--HomePageViewController-->
+        <scene sceneID="GZn-ge-jzP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomePage" referencedIdentifier="HomePageViewController" id="4HE-N7-v7s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" id="zv1-Au-e6l"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2gn-N7-Cpi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-391.5" y="-363"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="dJO-wV-6N7">
+            <objects>
+                <viewController id="VZY-qC-Pta" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R6g-7o-PhU"/>
+                        <viewControllerLayoutGuide type="bottom" id="g4F-Rp-ioU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G5v-bo-nQS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="icon_details_map_grey" id="e2e-Fq-PoW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzr-Z7-gnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-297" y="634"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ACf-uh-EKu">
+            <objects>
+                <tabBarController id="ujP-Bm-3LX" sceneMemberID="viewController">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="rjb-hy-T7T">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="4HE-N7-v7s" kind="relationship" relationship="viewControllers" id="tXW-UP-RJF"/>
+                        <segue destination="l9Y-me-VAF" kind="relationship" relationship="viewControllers" id="hoC-po-rgV"/>
+                        <segue destination="VZY-qC-Pta" kind="relationship" relationship="viewControllers" id="JPY-1C-7hL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z9F-Xr-pQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-928" y="-130"/>
+        </scene>
+        <!--OrderListViewController-->
+        <scene sceneID="faZ-Fc-T79">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OrderPage" referencedIdentifier="OrderListViewController" id="l9Y-me-VAF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="订单" image="icon_details_map_grey" id="CdX-n0-4xm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MmH-MV-MK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-391.5" y="42"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_details_map_grey" width="13" height="13"/>
+    </resources>
+</document>
