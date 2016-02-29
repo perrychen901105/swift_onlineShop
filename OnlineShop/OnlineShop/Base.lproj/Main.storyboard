@@ -5,39 +5,21 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--HomePageViewController-->
+        <!--HomePage-->
         <scene sceneID="GZn-ge-jzP">
             <objects>
-                <viewControllerPlaceholder storyboardName="HomePage" referencedIdentifier="HomePageViewController" id="4HE-N7-v7s" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="HomePage" referencedIdentifier="HomePage" id="4HE-N7-v7s" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" id="zv1-Au-e6l"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gn-N7-Cpi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-391.5" y="-363"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="dJO-wV-6N7">
-            <objects>
-                <viewController id="VZY-qC-Pta" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="R6g-7o-PhU"/>
-                        <viewControllerLayoutGuide type="bottom" id="g4F-Rp-ioU"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="G5v-bo-nQS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="icon_details_map_grey" id="e2e-Fq-PoW"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzr-Z7-gnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-297" y="634"/>
+            <point key="canvasLocation" x="-305" y="-389"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ACf-uh-EKu">
             <objects>
                 <tabBarController id="ujP-Bm-3LX" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="rjb-hy-T7T">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -46,22 +28,43 @@
                     <connections>
                         <segue destination="4HE-N7-v7s" kind="relationship" relationship="viewControllers" id="tXW-UP-RJF"/>
                         <segue destination="l9Y-me-VAF" kind="relationship" relationship="viewControllers" id="hoC-po-rgV"/>
-                        <segue destination="VZY-qC-Pta" kind="relationship" relationship="viewControllers" id="JPY-1C-7hL"/>
+                        <segue destination="Uu3-Q6-B5S" kind="relationship" relationship="viewControllers" id="0cQ-DY-odP"/>
+                        <segue destination="FFe-JE-F0L" kind="relationship" relationship="viewControllers" id="ql6-3W-Xd0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z9F-Xr-pQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-928" y="-130"/>
         </scene>
-        <!--OrderListViewController-->
+        <!--OrderPage-->
         <scene sceneID="faZ-Fc-T79">
             <objects>
-                <viewControllerPlaceholder storyboardName="OrderPage" referencedIdentifier="OrderListViewController" id="l9Y-me-VAF" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="OrderPage" referencedIdentifier="OrderPage" id="l9Y-me-VAF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="订单" image="icon_details_map_grey" id="CdX-n0-4xm"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmH-MV-MK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-391.5" y="42"/>
+            <point key="canvasLocation" x="-305.5" y="-234"/>
+        </scene>
+        <!--ShoppingCart-->
+        <scene sceneID="8mJ-C7-1WG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShoppingCart" referencedIdentifier="ShoppingCart" id="Uu3-Q6-B5S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="hrf-xQ-APZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rks-AG-KAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-296" y="-42"/>
+        </scene>
+        <!--UserInfo-->
+        <scene sceneID="WiW-cK-yew">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserInfo" referencedIdentifier="UserInfo" id="FFe-JE-F0L" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Et6-4H-yeX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dK5-dj-jes" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-312" y="133"/>
         </scene>
     </scenes>
     <resources>

@@ -8,7 +8,7 @@
         <!--Root View Controller-->
         <scene sceneID="GGN-mn-TAw">
             <objects>
-                <tableViewController id="y8r-zz-O0k" customClass="OrderList" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HomePageViewController" id="y8r-zz-O0k" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="w2v-Ub-FQN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,11 +34,11 @@
             </objects>
             <point key="canvasLocation" x="360" y="329"/>
         </scene>
-        <!--主页-->
+        <!--首页-->
         <scene sceneID="BtS-Xf-hmk">
             <objects>
-                <navigationController id="93i-9Q-if3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="主页" id="zBW-Ma-LFn"/>
+                <navigationController storyboardIdentifier="HomePage" id="93i-9Q-if3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" id="Fiv-KW-nLd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WG7-St-tnZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
