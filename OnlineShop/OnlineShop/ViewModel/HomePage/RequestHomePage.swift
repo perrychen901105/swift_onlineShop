@@ -8,12 +8,18 @@
 
 import Foundation
 
-class RequestHomePage: HomeRequestProtocol {
+struct RequestHomePage: HomeRequestProtocol {
+    
+    /**
+     获取全部的商品列表
+     
+     - parameter count: 商品个数
+     */
     func getProductsList(count: Int) {
         self.getAllProductList(nil, success: { (resObj: String) -> Void in
-            print("11" + resObj)
+            
             }) { (resMsg) -> Void in
-                
+                print(resMsg)
         }
     }
 }

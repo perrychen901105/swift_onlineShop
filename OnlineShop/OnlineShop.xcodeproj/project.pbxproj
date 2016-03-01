@@ -8,16 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		14E1CCB5B9B8F747122A757C /* Pods_OnlineShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B7643FB68F2B86BE183F1F /* Pods_OnlineShop.framework */; };
+		2A5F03BF1C85297500DBC416 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5F03BE1C85297500DBC416 /* BaseModel.swift */; };
+		2A5F03C11C85350A00DBC416 /* HomeRequestAssist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5F03C01C85350A00DBC416 /* HomeRequestAssist.swift */; };
+		2A5F03C41C85353500DBC416 /* RequestHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5F03C31C85353500DBC416 /* RequestHomePage.swift */; };
+		2A5F03C71C856F4100DBC416 /* HomePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5F03C61C856F4100DBC416 /* HomePageModel.swift */; };
 		2A9275DE1C842E230084F254 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9275DD1C842E230084F254 /* ShoppingCartViewController.swift */; };
 		2A9275E01C842E2F0084F254 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9275DF1C842E2F0084F254 /* UserInfoViewController.swift */; };
 		2A9275E21C842E400084F254 /* ShoppingCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9275E11C842E400084F254 /* ShoppingCart.storyboard */; };
 		2A9275E41C842E4A0084F254 /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9275E31C842E4A0084F254 /* UserInfo.storyboard */; };
 		2A9275E81C8431030084F254 /* HTTPRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9275E71C8431030084F254 /* HTTPRoot.swift */; };
-		2A9275ED1C843A190084F254 /* RequestHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9275EC1C843A190084F254 /* RequestHomePage.swift */; };
-		2A9275EF1C8447740084F254 /* HttpRequestAssist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9275EE1C8447740084F254 /* HttpRequestAssist.swift */; };
 		2A9275F11C8449950084F254 /* HttpMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9275F01C8449950084F254 /* HttpMacro.swift */; };
 		2AD18BA31C7FFD73009BA88D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD18BA21C7FFD73009BA88D /* AppDelegate.swift */; };
-		2AD18BA51C7FFD73009BA88D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD18BA41C7FFD73009BA88D /* ViewController.swift */; };
 		2AD18BA81C7FFD73009BA88D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD18BA61C7FFD73009BA88D /* Main.storyboard */; };
 		2AD18BAA1C7FFD73009BA88D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD18BA91C7FFD73009BA88D /* Assets.xcassets */; };
 		2AD18BAD1C7FFD73009BA88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD18BAB1C7FFD73009BA88D /* LaunchScreen.storyboard */; };
@@ -28,17 +29,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A5F03BE1C85297500DBC416 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		2A5F03C01C85350A00DBC416 /* HomeRequestAssist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRequestAssist.swift; sourceTree = "<group>"; };
+		2A5F03C31C85353500DBC416 /* RequestHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHomePage.swift; sourceTree = "<group>"; };
+		2A5F03C61C856F4100DBC416 /* HomePageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageModel.swift; sourceTree = "<group>"; };
 		2A9275DD1C842E230084F254 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		2A9275DF1C842E2F0084F254 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		2A9275E11C842E400084F254 /* ShoppingCart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShoppingCart.storyboard; sourceTree = "<group>"; };
 		2A9275E31C842E4A0084F254 /* UserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInfo.storyboard; sourceTree = "<group>"; };
 		2A9275E71C8431030084F254 /* HTTPRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRoot.swift; sourceTree = "<group>"; };
-		2A9275EC1C843A190084F254 /* RequestHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHomePage.swift; sourceTree = "<group>"; };
-		2A9275EE1C8447740084F254 /* HttpRequestAssist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestAssist.swift; sourceTree = "<group>"; };
 		2A9275F01C8449950084F254 /* HttpMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMacro.swift; sourceTree = "<group>"; };
 		2AD18B9F1C7FFD73009BA88D /* OnlineShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD18BA21C7FFD73009BA88D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2AD18BA41C7FFD73009BA88D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2AD18BA71C7FFD73009BA88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2AD18BA91C7FFD73009BA88D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AD18BAC1C7FFD73009BA88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,9 +66,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A5F03C21C85353500DBC416 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				2A5F03C31C85353500DBC416 /* RequestHomePage.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		2A5F03C51C856F2D00DBC416 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				2A5F03C61C856F4100DBC416 /* HomePageModel.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
 		2A9275E51C84309A0084F254 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2A5F03C21C85353500DBC416 /* HomePage */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -82,7 +101,7 @@
 		2A9275EB1C8439D50084F254 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				2A9275EC1C843A190084F254 /* RequestHomePage.swift */,
+				2A5F03C01C85350A00DBC416 /* HomeRequestAssist.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -113,7 +132,6 @@
 				2AD18BB51C804C10009BA88D /* Model */,
 				2AD18BB61C804C10009BA88D /* ViewController */,
 				2AD18BA21C7FFD73009BA88D /* AppDelegate.swift */,
-				2AD18BA41C7FFD73009BA88D /* ViewController.swift */,
 				2AD18BA61C7FFD73009BA88D /* Main.storyboard */,
 				2AD18BA91C7FFD73009BA88D /* Assets.xcassets */,
 				2AD18BAB1C7FFD73009BA88D /* LaunchScreen.storyboard */,
@@ -127,7 +145,6 @@
 			children = (
 				2A9275F01C8449950084F254 /* HttpMacro.swift */,
 				2A9275E71C8431030084F254 /* HTTPRoot.swift */,
-				2A9275EE1C8447740084F254 /* HttpRequestAssist.swift */,
 				2A9275E61C8430D50084F254 /* Request */,
 			);
 			path = HttpAssist;
@@ -136,6 +153,8 @@
 		2AD18BB51C804C10009BA88D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2A5F03BE1C85297500DBC416 /* BaseModel.swift */,
+				2A5F03C51C856F2D00DBC416 /* HomePage */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,16 +350,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A9275EF1C8447740084F254 /* HttpRequestAssist.swift in Sources */,
-				2A9275ED1C843A190084F254 /* RequestHomePage.swift in Sources */,
-				2AD18BA51C7FFD73009BA88D /* ViewController.swift in Sources */,
+				2A5F03BF1C85297500DBC416 /* BaseModel.swift in Sources */,
 				2A9275E01C842E2F0084F254 /* UserInfoViewController.swift in Sources */,
 				2A9275F11C8449950084F254 /* HttpMacro.swift in Sources */,
 				2AD18BA31C7FFD73009BA88D /* AppDelegate.swift in Sources */,
 				2A9275E81C8431030084F254 /* HTTPRoot.swift in Sources */,
 				2AD18BBC1C804CB9009BA88D /* HomePageViewController.swift in Sources */,
+				2A5F03C41C85353500DBC416 /* RequestHomePage.swift in Sources */,
 				2AD18BC31C804F8C009BA88D /* OrderListViewController.swift in Sources */,
+				2A5F03C71C856F4100DBC416 /* HomePageModel.swift in Sources */,
 				2A9275DE1C842E230084F254 /* ShoppingCartViewController.swift in Sources */,
+				2A5F03C11C85350A00DBC416 /* HomeRequestAssist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +389,7 @@
 		2AD18BAF1C7FFD73009BA88D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -388,6 +408,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -413,7 +434,7 @@
 		2AD18BB01C7FFD73009BA88D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -432,6 +453,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

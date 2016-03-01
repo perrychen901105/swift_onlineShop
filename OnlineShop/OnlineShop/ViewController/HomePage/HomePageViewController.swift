@@ -9,11 +9,16 @@
 import UIKit
 
 class HomePageViewController: UIViewController {
-
+    
+    var homeViewModel: RequestHomePage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.homeViewModel = RequestHomePage()
+        guard let hvm = self.homeViewModel else {
+            return
+        }
+        hvm.getProductsList(100);
     }
 
     override func didReceiveMemoryWarning() {

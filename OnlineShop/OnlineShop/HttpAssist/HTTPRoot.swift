@@ -10,22 +10,32 @@ import Foundation
 import Alamofire
 
 protocol HTTPRootProtocol {
-    func requestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject)->Void, failure:(errorObj: AnyObject)->Void)
-    func getRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject)->Void, failure:(errorObj: AnyObject)->Void)
-    func postRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject)->Void, failure:(errorObj: AnyObject)->Void)
+    func requestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: AnyObject)->Void)
+    func getRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: AnyObject)->Void)
+    func postRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: AnyObject)->Void)
 }
 extension HTTPRootProtocol {
-    func requestForData(url: String!, params: [String : AnyObject]?, success: (responseObj: AnyObject) -> Void, failure: (errorObj: AnyObject) -> Void) {
+    func requestForData(url: String!, params: [String : AnyObject]?, success: (responseObj: AnyObject?) -> Void, failure: (errorObj: AnyObject) -> Void) {
         print("1")
     }
     
-    func getRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject)->Void, failure:(errorObj: AnyObject)->Void) {
+    func getRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: AnyObject)->Void) {
+        
         Alamofire.request(.GET, url, parameters: params).responseJSON { (resObj) -> Void in
-            success(responseObj: resObj.data!)
+//            print("the obj is + \(resObj.result.value)")
+            guard let resValue = resObj.result.value else {
+                return
+            }
+            if Int(resValue["success"] as! NSNumber) == 0{
+                success(responseObj: resObj.result.value!["data"])
+            } else {
+                failure(errorObj: resValue["message"] as! String)
+            }
+            
         }
     }
     
-    func postRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject)->Void, failure:(errorObj: AnyObject)->Void) {
+    func postRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: AnyObject)->Void) {
         
     }
 }
