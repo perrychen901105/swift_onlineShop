@@ -24,9 +24,9 @@ class ProductModel: BaseModel,  Mappable{
     }
     
     func mapping(map: Map) {
-        productId <- map["id"]
-        create_time <- map["create_time"]
-        deleted <- map["deleted"]
+        productId <- map["Product.id"]
+        create_time <- map["Product.create_time"]
+        deleted <- map["Product.deleted"]
         desc <- map["Product.description"]
         imgUrl <- map["Product.imgUrl"]
         name <- map["Product.name"]

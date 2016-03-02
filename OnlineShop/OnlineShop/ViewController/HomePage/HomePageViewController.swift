@@ -18,7 +18,11 @@ class HomePageViewController: UIViewController {
         guard let hvm = self.homeViewModel else {
             return
         }
-        hvm.getProductsList(100);
+        hvm.getProductsList(100, success: { () -> Void in
+            print("the home model is \(self.homeViewModel)")
+            }) { (str) -> Void in
+                print(str)
+        }
     }
 
     override func didReceiveMemoryWarning() {

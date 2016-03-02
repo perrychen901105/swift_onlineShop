@@ -11,7 +11,7 @@ import Alamofire
 
 protocol HTTPRootProtocol {
     func requestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: AnyObject)->Void)
-    func getRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: AnyObject)->Void)
+    func getRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: String)->Void)
     func postRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: AnyObject)->Void)
 }
 extension HTTPRootProtocol {
@@ -19,7 +19,7 @@ extension HTTPRootProtocol {
         print("1")
     }
     
-    func getRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: AnyObject)->Void) {
+    func getRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: String)->Void) {
         
         Alamofire.request(.GET, url, parameters: params).responseJSON { (resObj) -> Void in
 //            print("the obj is + \(resObj.result.value)")

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 let HTTPDomain: String = "http://127.0.0.1/cakephp/"
 
 enum HttpMacro: String {
