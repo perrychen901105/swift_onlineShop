@@ -12,19 +12,33 @@ class HomePageViewController: UIViewController {
     
     var homeViewModel: RequestHomePage?
     
+    @IBOutlet weak var tbViewContent: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.homeViewModel = RequestHomePage()
-        guard let hvm = self.homeViewModel else {
-            return
-        }
-        hvm.getProductsList(100, success: { () -> Void in
-            print("the home model is \(self.homeViewModel)")
-            }) { (str) -> Void in
-                print(str)
-        }
+        self.tbViewContent.estimatedRowHeight = 24.0
+        self.tbViewContent.rowHeight = UITableViewAutomaticDimension
+        
+        self.getAllCategory()
+        
+        self.navigationItem.title = "商品类别"
     }
 
+    func getAllCategory() {
+        weak var wself = self
+        if let viewModel = self.homeViewModel {
+            viewModel.getCategoryList(["":""], success: { () -> Void in
+                wself!.refreshUI()
+                }, failure: { (str) -> Void in
+                    
+            })
+        }
+    }
+    
+    func refreshUI() {
+        self.tbViewContent.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -41,4 +55,26 @@ class HomePageViewController: UIViewController {
     }
     */
 
+}
+
+extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CategoryListCell") as! CategoryListCell
+        let model: CategoryModel = self.homeViewModel!.categories![indexPath.row]
+        cell.lblContent.text = model.name
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let list = self.homeViewModel?.categories else {
+            return 0
+        }
+        return (list.count)
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
 }

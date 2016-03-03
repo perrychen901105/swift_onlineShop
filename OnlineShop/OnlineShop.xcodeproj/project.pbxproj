@@ -12,6 +12,9 @@
 		2A5F03C11C85350A00DBC416 /* HomeRequestAssist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5F03C01C85350A00DBC416 /* HomeRequestAssist.swift */; };
 		2A5F03C41C85353500DBC416 /* RequestHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5F03C31C85353500DBC416 /* RequestHomePage.swift */; };
 		2A5F03C71C856F4100DBC416 /* HomePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5F03C61C856F4100DBC416 /* HomePageModel.swift */; };
+		2A62D61E1C8817240064F523 /* CategoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A62D61D1C8817240064F523 /* CategoryListCell.swift */; };
+		2A62D6201C886CCF0064F523 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A62D61F1C886CCF0064F523 /* ProductListCell.swift */; };
+		2A62D6221C886CF70064F523 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A62D6211C886CF70064F523 /* ProductListViewController.swift */; };
 		2A9275DE1C842E230084F254 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9275DD1C842E230084F254 /* ShoppingCartViewController.swift */; };
 		2A9275E01C842E2F0084F254 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9275DF1C842E2F0084F254 /* UserInfoViewController.swift */; };
 		2A9275E21C842E400084F254 /* ShoppingCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9275E11C842E400084F254 /* ShoppingCart.storyboard */; };
@@ -33,6 +36,9 @@
 		2A5F03C01C85350A00DBC416 /* HomeRequestAssist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRequestAssist.swift; sourceTree = "<group>"; };
 		2A5F03C31C85353500DBC416 /* RequestHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHomePage.swift; sourceTree = "<group>"; };
 		2A5F03C61C856F4100DBC416 /* HomePageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageModel.swift; sourceTree = "<group>"; };
+		2A62D61D1C8817240064F523 /* CategoryListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
+		2A62D61F1C886CCF0064F523 /* ProductListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		2A62D6211C886CF70064F523 /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		2A9275DD1C842E230084F254 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		2A9275DF1C842E2F0084F254 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		2A9275E11C842E400084F254 /* ShoppingCart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShoppingCart.storyboard; sourceTree = "<group>"; };
@@ -80,6 +86,15 @@
 				2A5F03C61C856F4100DBC416 /* HomePageModel.swift */,
 			);
 			path = HomePage;
+			sourceTree = "<group>";
+		};
+		2A62D61C1C8817080064F523 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2A62D61D1C8817240064F523 /* CategoryListCell.swift */,
+				2A62D61F1C886CCF0064F523 /* ProductListCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		2A9275E51C84309A0084F254 /* ViewModel */ = {
@@ -173,7 +188,9 @@
 		2AD18BB71C804C5A009BA88D /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				2A62D61C1C8817080064F523 /* Cell */,
 				2AD18BBB1C804CB9009BA88D /* HomePageViewController.swift */,
+				2A62D6211C886CF70064F523 /* ProductListViewController.swift */,
 				2AD18BBE1C804D83009BA88D /* HomePage.storyboard */,
 			);
 			path = HomePage;
@@ -352,11 +369,14 @@
 			files = (
 				2A5F03BF1C85297500DBC416 /* BaseModel.swift in Sources */,
 				2A9275E01C842E2F0084F254 /* UserInfoViewController.swift in Sources */,
+				2A62D6221C886CF70064F523 /* ProductListViewController.swift in Sources */,
 				2A9275F11C8449950084F254 /* HttpMacro.swift in Sources */,
+				2A62D61E1C8817240064F523 /* CategoryListCell.swift in Sources */,
 				2AD18BA31C7FFD73009BA88D /* AppDelegate.swift in Sources */,
 				2A9275E81C8431030084F254 /* HTTPRoot.swift in Sources */,
 				2AD18BBC1C804CB9009BA88D /* HomePageViewController.swift in Sources */,
 				2A5F03C41C85353500DBC416 /* RequestHomePage.swift in Sources */,
+				2A62D6201C886CCF0064F523 /* ProductListCell.swift in Sources */,
 				2AD18BC31C804F8C009BA88D /* OrderListViewController.swift in Sources */,
 				2A5F03C71C856F4100DBC416 /* HomePageModel.swift in Sources */,
 				2A9275DE1C842E230084F254 /* ShoppingCartViewController.swift in Sources */,

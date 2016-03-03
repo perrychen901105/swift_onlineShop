@@ -44,3 +44,33 @@ class ProductListModel: BaseModel,  Mappable {
 
     }
 }
+
+class CategoryModel: BaseModel, Mappable {
+    
+    var categoryId: String?
+    var name: String?
+    var order: Int?
+    var parentId: Int?
+    
+    required init?(_ map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        categoryId <- map["Category.id"]
+        name <- map["Category.name"]
+        order <- map["Category.order"]
+        parentId <- map["Category.parentId"]
+    }
+}
+
+class CategoryListModel: BaseModel, Mappable {
+    var categories: [CategoryModel]?
+    required init?(_ map: Map) {
+        
+    }
+    func mapping(map: Map) {
+        categories <- map["categories"]
+        
+    }
+}
