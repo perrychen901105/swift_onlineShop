@@ -29,6 +29,8 @@
 		2AD18BBF1C804D83009BA88D /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD18BBE1C804D83009BA88D /* HomePage.storyboard */; };
 		2AD18BC11C804F7E009BA88D /* OrderPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD18BC01C804F7E009BA88D /* OrderPage.storyboard */; };
 		2AD18BC31C804F8C009BA88D /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD18BC21C804F8C009BA88D /* OrderListViewController.swift */; };
+		2AF73F8C1C8D4EAE00C7B5F5 /* onlineShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2AF73F8A1C8D4EAE00C7B5F5 /* onlineShop.xcdatamodeld */; };
+		2AF73F8F1C8D6CDB00C7B5F5 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF73F8E1C8D6CDB00C7B5F5 /* ProductDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,9 @@
 		2AD18BBE1C804D83009BA88D /* HomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
 		2AD18BC01C804F7E009BA88D /* OrderPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderPage.storyboard; sourceTree = "<group>"; };
 		2AD18BC21C804F8C009BA88D /* OrderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		2AF73F8B1C8D4EAE00C7B5F5 /* onlineShop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = onlineShop.xcdatamodel; sourceTree = "<group>"; };
+		2AF73F8D1C8D64B200C7B5F5 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		2AF73F8E1C8D6CDB00C7B5F5 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		751483F80563780B64CCFBDE /* Pods-OnlineShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnlineShop/Pods-OnlineShop.debug.xcconfig"; sourceTree = "<group>"; };
 		97B7643FB68F2B86BE183F1F /* Pods_OnlineShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6DD206610BD737449BF6AEF /* Pods-OnlineShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnlineShop/Pods-OnlineShop.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 		2AD18B961C7FFD72009BA88D = {
 			isa = PBXGroup;
 			children = (
+				2AF73F8A1C8D4EAE00C7B5F5 /* onlineShop.xcdatamodeld */,
 				2AD18BA11C7FFD73009BA88D /* OnlineShop */,
 				2AD18BA01C7FFD73009BA88D /* Products */,
 				DD07EF95D5BADF2580B16F2F /* Pods */,
@@ -151,6 +157,7 @@
 				2AD18BA91C7FFD73009BA88D /* Assets.xcassets */,
 				2AD18BAB1C7FFD73009BA88D /* LaunchScreen.storyboard */,
 				2AD18BAE1C7FFD73009BA88D /* Info.plist */,
+				2AF73F8D1C8D64B200C7B5F5 /* Bridging-Header.h */,
 			);
 			path = OnlineShop;
 			sourceTree = "<group>";
@@ -191,6 +198,7 @@
 				2A62D61C1C8817080064F523 /* Cell */,
 				2AD18BBB1C804CB9009BA88D /* HomePageViewController.swift */,
 				2A62D6211C886CF70064F523 /* ProductListViewController.swift */,
+				2AF73F8E1C8D6CDB00C7B5F5 /* ProductDetailViewController.swift */,
 				2AD18BBE1C804D83009BA88D /* HomePage.storyboard */,
 			);
 			path = HomePage;
@@ -376,9 +384,11 @@
 				2A9275E81C8431030084F254 /* HTTPRoot.swift in Sources */,
 				2AD18BBC1C804CB9009BA88D /* HomePageViewController.swift in Sources */,
 				2A5F03C41C85353500DBC416 /* RequestHomePage.swift in Sources */,
+				2AF73F8C1C8D4EAE00C7B5F5 /* onlineShop.xcdatamodeld in Sources */,
 				2A62D6201C886CCF0064F523 /* ProductListCell.swift in Sources */,
 				2AD18BC31C804F8C009BA88D /* OrderListViewController.swift in Sources */,
 				2A5F03C71C856F4100DBC416 /* HomePageModel.swift in Sources */,
+				2AF73F8F1C8D6CDB00C7B5F5 /* ProductDetailViewController.swift in Sources */,
 				2A9275DE1C842E230084F254 /* ShoppingCartViewController.swift in Sources */,
 				2A5F03C11C85350A00DBC416 /* HomeRequestAssist.swift in Sources */,
 			);
@@ -447,7 +457,9 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "OnlineShop/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Debug;
 		};
@@ -485,6 +497,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "OnlineShop/Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -535,6 +549,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2AF73F8A1C8D4EAE00C7B5F5 /* onlineShop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2AF73F8B1C8D4EAE00C7B5F5 /* onlineShop.xcdatamodel */,
+			);
+			currentVersion = 2AF73F8B1C8D4EAE00C7B5F5 /* onlineShop.xcdatamodel */;
+			path = onlineShop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2AD18B971C7FFD72009BA88D /* Project object */;
 }

@@ -45,15 +45,23 @@ class HomePageViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "segueProductList" {
+            let vcProducts = segue.destinationViewController as! ProductListViewController
+            let cell :CategoryListCell = (sender as? CategoryListCell)!
+            let idxPath : NSIndexPath = self.tbViewContent.indexPathForCell(cell)!
+            let model: CategoryModel = self.homeViewModel!.categories![idxPath.row]
+            vcProducts.categoryId = Int(model.categoryId!)
+            vcProducts.navigationItem.title = model.name
+        }
     }
-    */
+    
 
 }
 

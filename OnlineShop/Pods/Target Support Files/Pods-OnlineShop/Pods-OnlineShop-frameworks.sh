@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-OnlineShop/AlamofireImage.framework"
   install_framework "Pods-OnlineShop/AlamofireNetworkActivityIndicator.framework"
   install_framework "Pods-OnlineShop/AlamofireObjectMapper.framework"
+  install_framework "Pods-OnlineShop/JGProgressHUD.framework"
   install_framework "Pods-OnlineShop/ObjectMapper.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -95,5 +96,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-OnlineShop/AlamofireImage.framework"
   install_framework "Pods-OnlineShop/AlamofireNetworkActivityIndicator.framework"
   install_framework "Pods-OnlineShop/AlamofireObjectMapper.framework"
+  install_framework "Pods-OnlineShop/JGProgressHUD.framework"
   install_framework "Pods-OnlineShop/ObjectMapper.framework"
 fi

@@ -22,7 +22,6 @@ extension HTTPRootProtocol {
     func getRequestForData(url: String!, params:[String: AnyObject]?, success:(responseObj: AnyObject?)->Void, failure:(errorObj: String)->Void) {
         
         Alamofire.request(.GET, url, parameters: params).responseJSON { (resObj) -> Void in
-//            print("the obj is + \(resObj.result.value)")
             guard let resValue = resObj.result.value else {
                 return
             }

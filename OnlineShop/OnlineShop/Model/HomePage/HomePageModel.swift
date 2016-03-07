@@ -17,7 +17,7 @@ class ProductModel: BaseModel,  Mappable{
     var imgUrl: String?
     var name: String?
     var original_price: Double?
-    var productId: Int?
+    var productId: String?
     
     required init?(_ map: Map) {
         
@@ -40,7 +40,7 @@ class ProductListModel: BaseModel,  Mappable {
         
     }
     func mapping(map: Map) {
-        products <- map["products"]
+        products <- map["Products"]
 
     }
 }
