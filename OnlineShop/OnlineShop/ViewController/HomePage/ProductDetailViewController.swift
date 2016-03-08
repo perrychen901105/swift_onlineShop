@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ProductDetailViewController: UIViewController {
 
@@ -14,9 +15,19 @@ class ProductDetailViewController: UIViewController {
     
     var homeViewModel: RequestHomePage?
     
+    var managedContext: NSManagedObjectContext?
+    
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var tvContent: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.homeViewModel = RequestHomePage()
+        if let productId = self.productId {
+            self.getProductDetail(productId)
+        }
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        self.managedContext = appDelegate.managedObjectContext
         // Do any additional setup after loading the view.
     }
 
@@ -37,9 +48,40 @@ class ProductDetailViewController: UIViewController {
     }
 
     func refreshUI() {
-        print(self.homeViewModel?.productDetail)
+        self.lblTitle.text = self.homeViewModel?.productDetail.name
+        self.tvContent.text = self.homeViewModel?.productDetail.desc
+        
+        let request = NSFetchRequest(entityName: "ShoppingCart")
+        do {
+            let results = try self.managedContext?.executeFetchRequest(request)
+            print("fetch results is \(results)")
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
     }
     
+    @IBAction func addToCart(sender: UIButton) {
+        
+        if let detail = self.homeViewModel?.productDetail {
+            let dogEntity = NSEntityDescription.entityForName("ShoppingCart",
+                inManagedObjectContext: self.managedContext!)
+            
+            do {
+                let cart: ShoppingCart = ShoppingCart(entity: dogEntity!, insertIntoManagedObjectContext: self.managedContext)
+                cart.desc = detail.desc
+                cart.productId = Int((detail.productId)!)
+                cart.name = detail.name
+                cart.imgUrl = detail.imgUrl
+                cart.createTime = NSDate()
+                cart.price = Double(detail.original_price!)
+                
+                self.managedContext!.insertObject(cart)
+                try self.managedContext!.save()
+            } catch let error as NSError {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

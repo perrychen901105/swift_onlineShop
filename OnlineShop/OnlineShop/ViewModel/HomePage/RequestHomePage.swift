@@ -70,6 +70,7 @@ extension RequestHomePage {
                 return
             }
             if Int(resValue["success"] as! NSNumber) == 0{
+                print("the value is \(resObj.result.value)")
                 if let product = Mapper<ProductModel>().map(resObj.result.value!["data"]) {
                     self.productDetail = product
                     success()
