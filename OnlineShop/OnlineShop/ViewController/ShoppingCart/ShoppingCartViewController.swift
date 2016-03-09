@@ -44,6 +44,12 @@ class ShoppingCartViewController: UIViewController {
         }
     }
 
+    @IBAction func submitCartAction(sender: AnyObject) {
+        let glManager: GlobalManager = GlobalManager.sharedInstance
+        if glManager.userId == nil {
+            print("please login")
+        }
+    }
     /*
     // MARK: - Navigation
 

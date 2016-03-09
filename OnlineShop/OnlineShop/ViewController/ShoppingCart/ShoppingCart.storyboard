@@ -97,6 +97,9 @@
                                 <state key="normal" title="提交订单">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitCartAction:" destination="0YD-fC-OVp" eventType="touchUpInside" id="Pid-PA-7sM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
