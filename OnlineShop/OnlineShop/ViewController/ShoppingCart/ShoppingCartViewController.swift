@@ -48,8 +48,12 @@ class ShoppingCartViewController: UIViewController {
         let glManager: GlobalManager = GlobalManager.sharedInstance
         if glManager.userId == nil {
             print("please login")
+            let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as! UINavigationController
+            self.presentViewController(loginVC, animated: true, completion: { () -> Void in
+            })
         }
     }
+    
     /*
     // MARK: - Navigation
 

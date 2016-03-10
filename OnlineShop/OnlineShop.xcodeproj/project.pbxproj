@@ -25,6 +25,9 @@
 		2A9275E81C8431030084F254 /* HTTPRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9275E71C8431030084F254 /* HTTPRoot.swift */; };
 		2A9275F11C8449950084F254 /* HttpMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9275F01C8449950084F254 /* HttpMacro.swift */; };
 		2AA7A4371C902A0B0013B2B6 /* GlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA7A4361C902A0B0013B2B6 /* GlobalManager.swift */; };
+		2AB40D541C916341007CED36 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB40D531C916341007CED36 /* LoginViewController.swift */; };
+		2AB40D561C916377007CED36 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB40D551C916377007CED36 /* RegisterViewController.swift */; };
+		2AB40D581C91691D007CED36 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB40D571C91691D007CED36 /* Login.storyboard */; };
 		2AD18BA31C7FFD73009BA88D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD18BA21C7FFD73009BA88D /* AppDelegate.swift */; };
 		2AD18BA81C7FFD73009BA88D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD18BA61C7FFD73009BA88D /* Main.storyboard */; };
 		2AD18BAA1C7FFD73009BA88D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD18BA91C7FFD73009BA88D /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		2A9275E71C8431030084F254 /* HTTPRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRoot.swift; sourceTree = "<group>"; };
 		2A9275F01C8449950084F254 /* HttpMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMacro.swift; sourceTree = "<group>"; };
 		2AA7A4361C902A0B0013B2B6 /* GlobalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalManager.swift; sourceTree = "<group>"; };
+		2AB40D531C916341007CED36 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2AB40D551C916377007CED36 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		2AB40D571C91691D007CED36 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2AD18B9F1C7FFD73009BA88D /* OnlineShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD18BA21C7FFD73009BA88D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD18BA71C7FFD73009BA88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -237,7 +243,10 @@
 			isa = PBXGroup;
 			children = (
 				2A9275DF1C842E2F0084F254 /* UserInfoViewController.swift */,
+				2AB40D531C916341007CED36 /* LoginViewController.swift */,
+				2AB40D551C916377007CED36 /* RegisterViewController.swift */,
 				2A9275E31C842E4A0084F254 /* UserInfo.storyboard */,
+				2AB40D571C91691D007CED36 /* Login.storyboard */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -330,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AB40D581C91691D007CED36 /* Login.storyboard in Resources */,
 				2AD18BBF1C804D83009BA88D /* HomePage.storyboard in Resources */,
 				2AD18BC11C804F7E009BA88D /* OrderPage.storyboard in Resources */,
 				2AD18BAD1C7FFD73009BA88D /* LaunchScreen.storyboard in Resources */,
@@ -395,6 +405,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AB40D541C916341007CED36 /* LoginViewController.swift in Sources */,
+				2AB40D561C916377007CED36 /* RegisterViewController.swift in Sources */,
 				2A5F03BF1C85297500DBC416 /* BaseModel.swift in Sources */,
 				2A9275E01C842E2F0084F254 /* UserInfoViewController.swift in Sources */,
 				2A62D6221C886CF70064F523 /* ProductListViewController.swift in Sources */,
