@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14E1CCB5B9B8F747122A757C /* Pods_OnlineShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B7643FB68F2B86BE183F1F /* Pods_OnlineShop.framework */; };
+		2A0DF1DC1C92BBE700589CD5 /* RequestUserCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DF1DB1C92BBE700589CD5 /* RequestUserCenter.swift */; };
 		2A2C171D1C8E9747008AA8EC /* ShoppingCart+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C171B1C8E9747008AA8EC /* ShoppingCart+CoreDataProperties.swift */; };
 		2A2C171E1C8E9747008AA8EC /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C171C1C8E9747008AA8EC /* ShoppingCart.swift */; };
 		2A2C17281C8ECAA2008AA8EC /* ShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C17271C8ECAA2008AA8EC /* ShoppingCartCell.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A0DF1DB1C92BBE700589CD5 /* RequestUserCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestUserCenter.swift; sourceTree = "<group>"; };
 		2A2C171B1C8E9747008AA8EC /* ShoppingCart+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShoppingCart+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2A2C171C1C8E9747008AA8EC /* ShoppingCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		2A2C17271C8ECAA2008AA8EC /* ShoppingCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartCell.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0DF1DA1C92BB6B00589CD5 /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DF1DB1C92BBE700589CD5 /* RequestUserCenter.swift */,
+			);
+			path = UserCenter;
+			sourceTree = "<group>";
+		};
 		2A2C17221C8ECA68008AA8EC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		2A9275E51C84309A0084F254 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2A0DF1DA1C92BB6B00589CD5 /* UserCenter */,
 				2A5F03C21C85353500DBC416 /* HomePage */,
 			);
 			path = ViewModel;
@@ -408,6 +419,7 @@
 				2AB40D541C916341007CED36 /* LoginViewController.swift in Sources */,
 				2AB40D561C916377007CED36 /* RegisterViewController.swift in Sources */,
 				2A5F03BF1C85297500DBC416 /* BaseModel.swift in Sources */,
+				2A0DF1DC1C92BBE700589CD5 /* RequestUserCenter.swift in Sources */,
 				2A9275E01C842E2F0084F254 /* UserInfoViewController.swift in Sources */,
 				2A62D6221C886CF70064F523 /* ProductListViewController.swift in Sources */,
 				2A9275F11C8449950084F254 /* HttpMacro.swift in Sources */,

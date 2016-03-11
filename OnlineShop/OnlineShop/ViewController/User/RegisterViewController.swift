@@ -10,16 +10,24 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "注册"
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func registerAction(sender: AnyObject) {
+    
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
