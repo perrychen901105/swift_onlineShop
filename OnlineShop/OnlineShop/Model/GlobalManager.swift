@@ -13,4 +13,5 @@ class GlobalManager {
     private init() {}
     
     var userId: NSString?
+    var curUser: UserModel?
 }

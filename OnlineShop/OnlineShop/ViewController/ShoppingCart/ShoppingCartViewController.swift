@@ -46,10 +46,19 @@ class ShoppingCartViewController: UIViewController {
 
     @IBAction func submitCartAction(sender: AnyObject) {
         let glManager: GlobalManager = GlobalManager.sharedInstance
-        if glManager.userId == nil {
+        if glManager.curUser?.user_id == nil {
             print("please login")
             let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as! UINavigationController
             self.presentViewController(loginVC, animated: true, completion: { () -> Void in
+            })
+        } else {
+            let alertController: UIAlertController = UIAlertController(title: "login Success", message: "go on", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (sender) -> Void in
+                print("success")
+            })
+            alertController.addAction(alertAction)
+            self.presentViewController(alertController, animated: true, completion: { () -> Void in
+                
             })
         }
     }

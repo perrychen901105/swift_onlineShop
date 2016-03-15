@@ -11,7 +11,7 @@ import Alamofire
 import ObjectMapper
 
 class RequestUserCenter {
-    
+    var userModel : UserModel!
 }
 
 extension RequestUserCenter {
@@ -20,16 +20,38 @@ extension RequestUserCenter {
      
      */
     func userRegister(parameters: [String: AnyObject], success:()->Void, failure:(str: String) -> Void) {
-        Alamofire.request(.POST, HttpMacro.getRequestURL(.ProductList)(), parameters: parameters).responseJSON { (resObj) -> Void in
-            //            print("the obj is + \(resObj.result.value)")
+        Alamofire.request(.POST, HttpMacro.getRequestURL(.RegisterUser)(), parameters: parameters).responseJSON { (resObj) -> Void in
+            
             guard let resValue = resObj.result.value else {
                 return
             }
             if Int(resValue["success"] as! NSNumber) == 0{
-                if let productList = Mapper<ProductListModel>().map(resObj.result.value!["data"]) {
-  
-                    success()
+                print("the obj is + \(resObj.result.value!["data"])")
+                if let userModel = Mapper<UserModel>().map(resObj.result.value!["data"]) {
+                    self.userModel = userModel
                 }
+                
+                success()
+            } else {
+                
+            }
+        }
+    }
+    
+    /**
+    *  登录
+    */
+    func loginAction(parameters: [String: AnyObject], success:()->Void, failure:(str: String) -> Void) {
+        Alamofire.request(.POST, HttpMacro.getRequestURL(.LoginUser)(), parameters: parameters).responseJSON { (resObj) -> Void in
+            guard let resValue = resObj.result.value else {
+                return
+            }
+            if Int(resValue["success"] as! NSNumber) == 0{
+                print("the obj is + \(resObj.result.value!["data"])")
+                if let userModel = Mapper<UserModel>().map(resObj.result.value!["data"]) {
+                    self.userModel = userModel
+                }
+                success()
             } else {
                 
             }

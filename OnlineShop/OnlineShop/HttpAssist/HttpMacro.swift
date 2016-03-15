@@ -8,10 +8,10 @@
 
 import Foundation
 
-let HTTPDomain: String = "http://127.0.0.1/"
+let HTTPDomain: String = "http://127.0.0.1/cakephp/"
 
 enum HttpMacro: String {
-    case ProductList, CategoryList, ProductDetail, RegisterUser
+    case ProductList, CategoryList, ProductDetail, RegisterUser, LoginUser
     func combineString(str: String) -> String! {
         return HTTPDomain + str
     }
@@ -25,8 +25,29 @@ enum HttpMacro: String {
         case .ProductDetail:
             return combineString("products/getProductDetail")
         case .RegisterUser:
-            return combineString("")
+            return combineString("userInfos/register")
+        case .LoginUser:
+            return combineString("userInfos/login")
         }
         
     }
+    
+    /**
+    public $default = array(
+    'datasource' => 'Database/Mysql',
+    'persistent' => false,
+    'host' => 'localhost',
+    'login' => 'root',
+    'password' => 'root',
+    'database' => 'onlineshop',
+    'prefix' => '',
+    'schema' => '',
+    'encoding' => 'utf8',
+    );
+    
+    
+    You can disable the debug feature by turning debug to 0 in the app\Config\core.php file
+    
+    Configure::write('debug', 0);
+    **/
 }
