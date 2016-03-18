@@ -11,7 +11,7 @@ import Foundation
 let HTTPDomain: String = "http://127.0.0.1/cakephp/"
 
 enum HttpMacro: String {
-    case ProductList, CategoryList, ProductDetail, RegisterUser, LoginUser
+    case ProductList, CategoryList, ProductDetail, RegisterUser, LoginUser, GetAllAddress, AddAddress, RemoveAddress
     func combineString(str: String) -> String! {
         return HTTPDomain + str
     }
@@ -28,6 +28,12 @@ enum HttpMacro: String {
             return combineString("userInfos/register")
         case .LoginUser:
             return combineString("userInfos/login")
+        case .GetAllAddress:
+            return combineString("orders/getAllAddress")
+        case .AddAddress:
+            return combineString("orders/addAddress")
+        case .RemoveAddress:
+            return combineString("orders/removeAddress")
         }
         
     }

@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import ObjectMapper
+import JGProgressHUD
 
 //HomeRequestProtocol
 class RequestHomePage {
@@ -26,7 +27,6 @@ extension RequestHomePage {
      */
     func getProductsList(parameters: [String: AnyObject], success:()->Void, failure:(str: String) -> Void) {
         Alamofire.request(.GET, HttpMacro.getRequestURL(.ProductList)(), parameters: parameters).responseJSON { (resObj) -> Void in
-            //            print("the obj is + \(resObj.result.value)")
             guard let resValue = resObj.result.value else {
                 return
             }
@@ -50,6 +50,7 @@ extension RequestHomePage {
      */
     func getCategoryList(parameters: [String: AnyObject], success:()->Void, failure:(str: String) -> Void) {
         Alamofire.request(.GET, HttpMacro.getRequestURL(.CategoryList)(), parameters: parameters).responseJSON { (resObj) -> Void in
+            
             guard let resValue = resObj.result.value else {
                 return
             }
