@@ -50,15 +50,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tib-LC-bU0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tib-LC-bU0">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressListCell" rowHeight="131" id="ozf-b0-j2T" customClass="AddressListCell" customModule="OnlineShop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="131"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressListCell" rowHeight="85" id="ozf-b0-j2T" customClass="AddressListCell" customModule="OnlineShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ozf-b0-j2T" id="3bW-4r-pFV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eY-3w-rDD">
@@ -75,6 +75,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfi-WT-bc9">
                                                     <rect key="frame" x="15" y="61" width="570" height="16"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -90,8 +91,14 @@
                                                 <constraint firstItem="Qfi-WT-bc9" firstAttribute="leading" secondItem="3bW-4r-pFV" secondAttribute="leading" constant="15" id="ktM-ry-xZ3"/>
                                                 <constraint firstItem="qUm-zl-18G" firstAttribute="leading" secondItem="3bW-4r-pFV" secondAttribute="leading" constant="15" id="lDS-VH-5Iq"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qfi-WT-bc9" secondAttribute="trailing" constant="15" id="lw7-oz-UeE"/>
+                                                <constraint firstAttribute="bottom" secondItem="Qfi-WT-bc9" secondAttribute="bottom" constant="7" id="saj-mB-1Cr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblAddress" destination="Qfi-WT-bc9" id="831-Nk-JWq"/>
+                                            <outlet property="lblName" destination="6eY-3w-rDD" id="Bjy-WN-JEm"/>
+                                            <outlet property="lblPhone" destination="qUm-zl-18G" id="73W-va-QHM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -21,6 +21,8 @@ class AddressListViewController: UIViewController {
         super.viewDidLoad()
         self.addressViewModel = RequestOrder()
         self.getAllAddress()
+        self.tbViewContent.rowHeight = UITableViewAutomaticDimension
+        self.tbViewContent.estimatedRowHeight = 44.0
         // Do any additional setup after loading the view.
     }
 
@@ -33,7 +35,7 @@ class AddressListViewController: UIViewController {
         if let modelOrder = self.addressViewModel {
             if let curUser = GlobalManager.sharedInstance.curUser {
                 modelOrder.getAllAddress(["userId": curUser.user_id!], success: { () -> Void in
-                    
+                    self.tbViewContent.reloadData()
                     }, failure: { (str) -> Void in
                         
                 })
@@ -56,9 +58,11 @@ class AddressListViewController: UIViewController {
 extension AddressListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("AddressListCell") as! ProductListCell
-        let modelAddress: OrderAddressModel = (self.addressViewModel?.arrAddress[indexPath.row])!
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("AddressListCell") as! AddressListCell
+        if let modelAddress: OrderAddressModel = self.addressViewModel?.arrAddress[indexPath.row] {
+            cell.lblName.text = modelAddress.receiver
+            
+        }
         return cell
     }
     
