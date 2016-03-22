@@ -14,6 +14,7 @@ class ShoppingCartCell: UITableViewCell {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
     
+    @IBOutlet weak var btnRemoveCart: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
