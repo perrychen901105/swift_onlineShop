@@ -8,16 +8,21 @@
 
 import UIKit
 import CoreData
+import JGProgressHUD
 
 class ShoppingCartViewController: UIViewController {
 
     var managedContext: NSManagedObjectContext?
     var cartListArr: [ShoppingCart]?
+    var curShipAddress: OrderAddressModel?
+    var orderViewModel: RequestOrder?
     
     @IBOutlet weak var tbViewContent: UITableView!
     
+    @IBOutlet weak var lblShipAddress: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.orderViewModel = RequestOrder()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         self.navigationItem.title = "购物车"
@@ -45,6 +50,9 @@ class ShoppingCartViewController: UIViewController {
     }
 
     @IBAction func submitCartAction(sender: AnyObject) {
+        if self.curShipAddress?.addressId == nil {
+            return
+        }
         let glManager: GlobalManager = GlobalManager.sharedInstance
         if glManager.curUser?.user_id == nil {
             print("please login")
@@ -52,15 +60,73 @@ class ShoppingCartViewController: UIViewController {
             self.presentViewController(loginVC, animated: true, completion: { () -> Void in
             })
         } else {
-            let alertController: UIAlertController = UIAlertController(title: "login Success", message: "go on", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertController: UIAlertController = UIAlertController(title: "是否提交订单", message: "", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (sender) -> Void in
-                print("success")
+                if self.cartListArr?.count == 0 {
+                    return
+                }
+                let allPrices = self.cartListArr?.reduce(0, combine: { (price, model:ShoppingCart) -> Float in
+                    price+(model.price?.floatValue)!
+                })
+                let allIds: Array = (self.cartListArr?.map({ (model) -> String in
+                    return (model.productId?.stringValue)!
+                }))!
+                let strIds = allIds.joinWithSeparator("_")
+                let paras: [String: AnyObject] = ["price": String(format: "%f", allPrices!), "userId": (glManager.curUser?.user_id)!, "proId":strIds, "addressId": (self.curShipAddress?.addressId)!]
+                self.orderViewModel?.saveOrder(paras, success: { () -> Void in
+                    let loading = JGProgressHUD(style: .Light)
+                    loading.textLabel.text = "提交成功"
+                    loading.indicatorView = JGProgressHUDSuccessIndicatorView()
+                    loading.showInView(self.view)
+                    loading.dismissAfterDelay(0.5)
+                    let fetchRequest = NSFetchRequest(entityName: "ShoppingCart")
+                    let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+                    
+                    do {
+                        try self.managedContext?.executeRequest(deleteRequest)
+                        self.cartListArr?.removeAll()
+                        self.tbViewContent.reloadData()
+                    } catch let error as NSError {
+                        print("Could not delete \(error), \(error.userInfo)")
+                    }
+                    }, failure: { (str) -> Void in
+                        
+                })
             })
             alertController.addAction(alertAction)
+
+            let alertCancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (sender) -> Void in
+                
+            })
+            alertController.addAction(alertCancelAction)
             self.presentViewController(alertController, animated: true, completion: { () -> Void in
                 
             })
         }
+    }
+    
+    @IBAction func actionChooseAddress(sender: UIButton) {
+        let glManager: GlobalManager = GlobalManager.sharedInstance
+        if glManager.curUser?.user_id == nil {
+            print("please login")
+            let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as! UINavigationController
+            self.presentViewController(loginVC, animated: true, completion: { () -> Void in
+            })
+        } else {
+            let vcAddressList: AddressListViewController = UIStoryboard(name: "OrderPage", bundle: nil).instantiateViewControllerWithIdentifier("AddressListViewController") as! AddressListViewController
+            vcAddressList.block = { s in
+                if let modelAddress:OrderAddressModel = s {
+                    self.curShipAddress = modelAddress
+                    self.lblShipAddress.text = self.curShipAddress?.address
+                }
+            }
+            vcAddressList.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vcAddressList, animated: true)
+        }
+    }
+    
+    func removeCart(sender: UIButton) {
+        print(sender.tag)
     }
     
     /*
@@ -80,7 +146,10 @@ extension ShoppingCartViewController: UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingCartCell") as! ShoppingCartCell
 
         let cart = self.cartListArr![indexPath.row] 
-        cell.textLabel?.text = cart.name
+        cell.lblName.text = cart.name
+        cell.lblPrice.text = cart.price?.stringValue
+        cell.btnRemoveCart.tag = indexPath.row
+        cell.btnRemoveCart.addTarget(self, action: Selector("removeCart:"), forControlEvents: .TouchUpInside)
         return cell
     }
     

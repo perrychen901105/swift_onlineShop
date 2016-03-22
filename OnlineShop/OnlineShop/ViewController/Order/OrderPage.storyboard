@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -51,7 +51,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tib-LC-bU0">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressListCell" rowHeight="85" id="ozf-b0-j2T" customClass="AddressListCell" customModule="OnlineShop" customModuleProvider="target">
@@ -64,20 +64,20 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eY-3w-rDD">
                                                     <rect key="frame" x="15" y="5" width="570" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUm-zl-18G">
                                                     <rect key="frame" x="15" y="33" width="570" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfi-WT-bc9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfi-WT-bc9">
                                                     <rect key="frame" x="15" y="61" width="570" height="16"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -101,6 +101,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="QeF-Du-hen" id="yy8-gk-oG2"/>
+                                    <outlet property="delegate" destination="QeF-Du-hen" id="a0U-WQ-Lzx"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -111,13 +115,79 @@
                             <constraint firstAttribute="trailing" secondItem="Tib-LC-bU0" secondAttribute="trailing" id="uFk-QH-exo"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tbViewContent" destination="Tib-LC-bU0" id="3a5-0g-uug"/>
+                        <segue destination="KaE-3c-jMh" kind="show" identifier="segueAdd" id="lQO-LB-WAy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bH-xF-MP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024" y="321"/>
+            <point key="canvasLocation" x="1023" y="321"/>
+        </scene>
+        <!--Add Address View Controller-->
+        <scene sceneID="Dej-Lh-7dq">
+            <objects>
+                <viewController storyboardIdentifier="AddAddress" id="KaE-3c-jMh" customClass="AddAddressViewController" customModule="OnlineShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RKI-yD-2UK"/>
+                        <viewControllerLayoutGuide type="bottom" id="aKx-Q9-PQY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jhc-98-vft">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入收货人姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zWJ-XD-gLm">
+                                <rect key="frame" x="20" y="84" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入收货人电话号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqM-gu-NfM">
+                                <rect key="frame" x="20" y="134" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cIw-yv-Byn">
+                                <rect key="frame" x="15" y="212" width="570" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="j1L-9G-KCt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入收获地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-iA-KAL">
+                                <rect key="frame" x="20" y="184" width="105" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zWJ-XD-gLm" firstAttribute="top" secondItem="RKI-yD-2UK" secondAttribute="bottom" constant="20" id="9Ou-Ri-4ce"/>
+                            <constraint firstAttribute="trailing" secondItem="gqM-gu-NfM" secondAttribute="trailing" constant="20" id="Bcm-1a-oRO"/>
+                            <constraint firstItem="cIw-yv-Byn" firstAttribute="leading" secondItem="jhc-98-vft" secondAttribute="leading" constant="15" id="JcJ-GK-7bZ"/>
+                            <constraint firstItem="cIw-yv-Byn" firstAttribute="top" secondItem="2Ls-iA-KAL" secondAttribute="bottom" constant="10" id="Qv2-9P-aLZ"/>
+                            <constraint firstItem="gqM-gu-NfM" firstAttribute="leading" secondItem="jhc-98-vft" secondAttribute="leading" constant="20" id="TjA-tl-6hW"/>
+                            <constraint firstAttribute="trailing" secondItem="cIw-yv-Byn" secondAttribute="trailing" constant="15" id="YoT-SV-zGc"/>
+                            <constraint firstItem="2Ls-iA-KAL" firstAttribute="leading" secondItem="jhc-98-vft" secondAttribute="leading" constant="20" id="bfP-55-2bx"/>
+                            <constraint firstItem="2Ls-iA-KAL" firstAttribute="top" secondItem="gqM-gu-NfM" secondAttribute="bottom" constant="20" id="dT9-ad-sul"/>
+                            <constraint firstAttribute="trailing" secondItem="zWJ-XD-gLm" secondAttribute="trailing" constant="20" id="rEk-qC-z5b"/>
+                            <constraint firstItem="gqM-gu-NfM" firstAttribute="top" secondItem="zWJ-XD-gLm" secondAttribute="bottom" constant="20" id="s2p-5G-ruH"/>
+                            <constraint firstItem="zWJ-XD-gLm" firstAttribute="leading" secondItem="jhc-98-vft" secondAttribute="leading" constant="20" id="zFB-Pb-F3L"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tfDeliveryName" destination="zWJ-XD-gLm" id="tqp-b3-OlC"/>
+                        <outlet property="tfDeliveryPhone" destination="gqM-gu-NfM" id="HnZ-au-7f8"/>
+                        <outlet property="tvDeliveryAddress" destination="cIw-yv-Byn" id="yyO-he-mvI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERT-YT-yTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1656" y="321"/>
         </scene>
         <!--订单-->
         <scene sceneID="AC7-cb-eu7">

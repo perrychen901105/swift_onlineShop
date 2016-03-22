@@ -24,6 +24,7 @@ extension RequestOrder {
                 return
             }
             if Int(resValue["success"] as! NSNumber) == 0{
+                self.arrAddress.removeAll()
                 let arrOri = resObj.result.value!["data"] as! NSArray
                 let sum: Int = arrOri.count
                 for(var i: Int = 0; i < sum; i++) {
@@ -36,5 +37,57 @@ extension RequestOrder {
             } else {
             }
         }
+    }
+    
+    /**
+    *  添加收获地址
+    */
+    func addAddress(parameters: [String: AnyObject], success:()->Void, failure:(str: String) -> Void) {
+        Alamofire.request(.POST, HttpMacro.getRequestURL(.AddAddress)(), parameters: parameters).responseJSON { (resObj) -> Void in
+            guard let resValue = resObj.result.value else {
+                return
+            }
+            if Int(resValue["success"] as! NSNumber) == 0{
+                success()
+            } else {
+            }
+        }
+    }
+    
+    /**
+    *  删除收获地址
+    */
+    func removeAddress(parameters: [String: AnyObject], success:()->Void, failure:(str: String) -> Void) {
+        Alamofire.request(.POST, HttpMacro.getRequestURL(.RemoveAddress)(), parameters: parameters).responseJSON { (resObj) -> Void in
+            guard let resValue = resObj.result.value else {
+                return
+            }
+            if Int(resValue["success"] as! NSNumber) == 0{
+                success()
+            } else {
+            }
+        }
+    }
+    
+    /**
+    *  保存订单
+    */
+    func saveOrder(parameters: [String: AnyObject], success:()->Void, failure:(str: String) -> Void) {
+        Alamofire.request(.POST, HttpMacro.getRequestURL(.SaveOrder)(), parameters: parameters).responseJSON { (resObj) -> Void in
+            guard let resValue = resObj.result.value else {
+                return
+            }
+            if Int(resValue["success"] as! NSNumber) == 0{
+                success()
+            } else {
+            }
+        }
+    }
+    
+    /**
+    *  获取订单列表
+    */
+    func getOrderList(parameters: [String: AnyObject], success:()->Void, failure:(str: String) -> Void) {
+        
     }
 }
