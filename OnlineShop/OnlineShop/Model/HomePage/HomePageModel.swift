@@ -16,11 +16,11 @@ class ProductModel: BaseModel,  Mappable{
     var desc: String?
     var imgUrl: String?
     var name: String?
-    var original_price: String?
+    var original_price: String
     var productId: String?
     
     required init?(_ map: Map) {
-        
+        original_price = ""
     }
     
     func mapping(map: Map) {

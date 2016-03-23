@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--用户-->
@@ -129,6 +129,7 @@
                         <outlet property="lblUserName" destination="aU8-b4-2bV" id="n15-2y-Ayr"/>
                         <outlet property="lblUserPhone" destination="SjS-eD-5Sj" id="BT5-2q-jOR"/>
                         <segue destination="a5R-Kd-dlk" kind="show" identifier="showAddressList" id="16R-O8-De1"/>
+                        <segue destination="t7f-H6-1y4" kind="show" identifier="showOrderList" id="sGC-of-7K1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQa-JV-atc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,6 +143,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6G-Cz-iqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="376.5" y="547"/>
+        </scene>
+        <!--OrderListViewController-->
+        <scene sceneID="jTM-Zi-ryj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OrderPage" referencedIdentifier="OrderListViewController" id="t7f-H6-1y4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3B-dZ-YXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30.5" y="547"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Fnk-21-V0r">

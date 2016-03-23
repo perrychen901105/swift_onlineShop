@@ -29,3 +29,49 @@ class OrderAddressModel: BaseModel ,Mappable{
         receiver <- map["order_addresses.receiver"]
     }
 }
+
+class OrderListModel: BaseModel, Mappable {
+    var address: String?
+    var phone: String
+    var receiver: String
+    var orderId: String?
+    var orderTime: String
+    var totalPrice: String?
+    
+    required init?(_ map: Map) {
+        phone = ""
+        receiver = ""
+        orderTime = ""
+    }
+    
+    func mapping(map: Map) {
+        address <- map["Address.full_address"]
+        phone <- map["Address.phone_number"]
+        receiver <- map["Address.receiver"]
+        orderId <- map["Order.id"]
+        orderTime <- map["Order.order_time"]
+        totalPrice <- map["Order.total_price"]
+    }
+}
+
+class OrderProductModel: BaseModel, Mappable {
+    var imgUrl: String
+    var productName: String
+    var price: String
+    var productId: String
+    
+    required init?(_ map: Map) {
+        imgUrl = ""
+        productName = ""
+        price = ""
+        productId = ""
+    }
+    
+    func mapping(map: Map) {
+        productId <- map["products.id"]
+        productName <- map["products.name"]
+        imgUrl <- map["products.imgUrl"]
+        price <- map["products.original_price"]
+    }
+}
+

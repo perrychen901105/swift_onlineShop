@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		14E1CCB5B9B8F747122A757C /* Pods_OnlineShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B7643FB68F2B86BE183F1F /* Pods_OnlineShop.framework */; };
 		2A0DF1DC1C92BBE700589CD5 /* RequestUserCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DF1DB1C92BBE700589CD5 /* RequestUserCenter.swift */; };
+		2A1E0E231CA263EC0018269C /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E0E221CA263EC0018269C /* OrderListCell.swift */; };
+		2A1E0E251CA286E10018269C /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E0E241CA286E10018269C /* OrderDetailViewController.swift */; };
 		2A2C171D1C8E9747008AA8EC /* ShoppingCart+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C171B1C8E9747008AA8EC /* ShoppingCart+CoreDataProperties.swift */; };
 		2A2C171E1C8E9747008AA8EC /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C171C1C8E9747008AA8EC /* ShoppingCart.swift */; };
 		2A2C17281C8ECAA2008AA8EC /* ShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C17271C8ECAA2008AA8EC /* ShoppingCartCell.swift */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		2A0DF1DB1C92BBE700589CD5 /* RequestUserCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestUserCenter.swift; sourceTree = "<group>"; };
+		2A1E0E221CA263EC0018269C /* OrderListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListCell.swift; sourceTree = "<group>"; };
+		2A1E0E241CA286E10018269C /* OrderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		2A2C171B1C8E9747008AA8EC /* ShoppingCart+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShoppingCart+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2A2C171C1C8E9747008AA8EC /* ShoppingCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		2A2C17271C8ECAA2008AA8EC /* ShoppingCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartCell.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				2A861A781C9C086A004C08CE /* AddressListCell.swift */,
+				2A1E0E221CA263EC0018269C /* OrderListCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 			children = (
 				2A861A771C9C0855004C08CE /* Cell */,
 				2AD18BC21C804F8C009BA88D /* OrderListViewController.swift */,
+				2A1E0E241CA286E10018269C /* OrderDetailViewController.swift */,
 				2A861A751C9BFCCE004C08CE /* AddressListViewController.swift */,
 				2A629B081CA0E2A500695EEF /* AddAddressViewController.swift */,
 				2AD18BC01C804F7E009BA88D /* OrderPage.storyboard */,
@@ -474,12 +480,14 @@
 				2A9275E01C842E2F0084F254 /* UserInfoViewController.swift in Sources */,
 				2A62D6221C886CF70064F523 /* ProductListViewController.swift in Sources */,
 				2A9275F11C8449950084F254 /* HttpMacro.swift in Sources */,
+				2A1E0E231CA263EC0018269C /* OrderListCell.swift in Sources */,
 				2A62D61E1C8817240064F523 /* CategoryListCell.swift in Sources */,
 				2A861A761C9BFCCE004C08CE /* AddressListViewController.swift in Sources */,
 				2A629B091CA0E2A500695EEF /* AddAddressViewController.swift in Sources */,
 				2AD18BA31C7FFD73009BA88D /* AppDelegate.swift in Sources */,
 				2AA7A4371C902A0B0013B2B6 /* GlobalManager.swift in Sources */,
 				2A9275E81C8431030084F254 /* HTTPRoot.swift in Sources */,
+				2A1E0E251CA286E10018269C /* OrderDetailViewController.swift in Sources */,
 				2A2C171E1C8E9747008AA8EC /* ShoppingCart.swift in Sources */,
 				2AD18BBC1C804CB9009BA88D /* HomePageViewController.swift in Sources */,
 				2A5F03C41C85353500DBC416 /* RequestHomePage.swift in Sources */,

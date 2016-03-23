@@ -73,7 +73,7 @@ class ProductDetailViewController: UIViewController {
                 cart.name = detail.name
                 cart.imgUrl = detail.imgUrl
                 cart.createTime = NSDate()
-                cart.price = Double(detail.original_price!)
+                cart.price = Double(detail.original_price)
                 
                 self.managedContext!.insertObject(cart)
                 try self.managedContext!.save()

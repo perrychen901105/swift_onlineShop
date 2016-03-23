@@ -66,7 +66,7 @@ class UserInfoViewController: UIViewController {
             self.presentViewController(loginVC, animated: true, completion: { () -> Void in
             })
         } else {
-            
+            self.performSegueWithIdentifier("showOrderList", sender: sender)
         }
     }
     

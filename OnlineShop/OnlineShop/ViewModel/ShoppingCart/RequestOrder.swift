@@ -12,6 +12,8 @@ import ObjectMapper
 
 class RequestOrder {
     var arrAddress: [OrderAddressModel] = []
+    var arrOrderList: [OrderListModel] = []
+    var arrOrderDetail: [OrderProductModel] = []
 }
 
 extension RequestOrder {
@@ -27,7 +29,7 @@ extension RequestOrder {
                 self.arrAddress.removeAll()
                 let arrOri = resObj.result.value!["data"] as! NSArray
                 let sum: Int = arrOri.count
-                for(var i: Int = 0; i < sum; i++) {
+                for i in 0 ..< sum {
                     let model = arrOri[i]
                     if let userModel = Mapper<OrderAddressModel>().map(model) {
                         self.arrAddress.append(userModel)
@@ -88,6 +90,47 @@ extension RequestOrder {
     *  获取订单列表
     */
     func getOrderList(parameters: [String: AnyObject], success:()->Void, failure:(str: String) -> Void) {
-        
+        Alamofire.request(.GET, HttpMacro.getRequestURL(.GetOrderList)(), parameters: parameters).responseJSON { (resObj) -> Void in
+            guard let resValue = resObj.result.value else {
+                return
+            }
+            if Int(resValue["success"] as! NSNumber) == 0{
+                self.arrOrderList.removeAll()
+                let arrOri = resObj.result.value!["data"] as! NSArray
+                let sum: Int = arrOri.count
+                for i in 0 ..< sum {
+                    let model = arrOri[i]
+                    if let orderModel = Mapper<OrderListModel>().map(model) {
+                        self.arrOrderList.append(orderModel)
+                    }
+                }
+                success()
+            } else {
+            }
+        }
+    }
+    
+    /**
+     *  获取订单详情
+     */
+    func getOrderDetail(parameters: [String: AnyObject], success:()->Void, failure:(str: String) -> Void) {
+        Alamofire.request(.GET, HttpMacro.getRequestURL(.GetOrderDetail)(), parameters: parameters).responseJSON { (resObj) -> Void in
+            guard let resValue = resObj.result.value else {
+                return
+            }
+            if Int(resValue["success"] as! NSNumber) == 0{
+                self.arrOrderDetail.removeAll()
+                let arrOri = resObj.result.value!["data"] as! NSArray
+                let sum: Int = arrOri.count
+                for i in 0 ..< sum {
+                    let model = arrOri[i]
+                    if let orderModel = Mapper<OrderProductModel>().map(model) {
+                        self.arrOrderDetail.append(orderModel)
+                    }
+                }
+                success()
+            } else {
+            }
+        }
     }
 }
