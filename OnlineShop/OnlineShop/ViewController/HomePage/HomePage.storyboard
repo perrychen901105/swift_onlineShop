@@ -112,7 +112,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g1m-OV-H5v">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g1m-OV-H5v">
                                                     <rect key="frame" x="10" y="10" width="80" height="79"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="HyD-Fe-6qV"/>
@@ -133,10 +133,18 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6F-tD-wSq">
+                                                    <rect key="frame" x="98" y="73" width="31" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Z8d-yO-go9" secondAttribute="trailing" constant="13" id="8r4-pT-kO1"/>
                                                 <constraint firstItem="g1m-OV-H5v" firstAttribute="leading" secondItem="BsG-eP-cx7" secondAttribute="leading" constant="10" id="CBk-sf-6mT"/>
+                                                <constraint firstItem="v6F-tD-wSq" firstAttribute="leading" secondItem="g1m-OV-H5v" secondAttribute="trailing" constant="8" id="Q0L-o8-YjO"/>
+                                                <constraint firstAttribute="bottom" secondItem="v6F-tD-wSq" secondAttribute="bottom" constant="11" id="Q4V-mp-w3O"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ogm-WJ-lu4" secondAttribute="bottom" constant="10" id="U2b-cG-hJz"/>
                                                 <constraint firstItem="g1m-OV-H5v" firstAttribute="top" secondItem="BsG-eP-cx7" secondAttribute="top" constant="10" id="XHb-8U-Zni"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ogm-WJ-lu4" secondAttribute="trailing" constant="13" id="h9L-7k-mLV"/>
@@ -148,6 +156,7 @@
                                         <connections>
                                             <outlet property="imgViewContent" destination="g1m-OV-H5v" id="aYN-Om-Ohr"/>
                                             <outlet property="lblPrice" destination="Ogm-WJ-lu4" id="q9u-K6-dXI"/>
+                                            <outlet property="lblSpec" destination="v6F-tD-wSq" id="dG2-Dd-EIt"/>
                                             <outlet property="lblTitle" destination="Z8d-yO-go9" id="3bW-3n-NIR"/>
                                             <segue destination="ciG-GI-1ol" kind="show" identifier="segueProductDetail" id="TVz-eS-Ku0"/>
                                         </connections>

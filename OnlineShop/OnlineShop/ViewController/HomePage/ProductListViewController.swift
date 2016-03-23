@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import AlamofireImage
 
 class ProductListViewController: UIViewController {
 
@@ -74,6 +75,14 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         let model: ProductModel = self.homeViewModel!.products![indexPath.row]
         cell.lblTitle.text = model.name
         cell.lblPrice.text = model.original_price
+        cell.lblSpec.text = model.spec
+        if model.imgUrl.characters.count > 0 {
+            Alamofire.request(.GET, model.imgUrl).responseImage(completionHandler: { (response) in
+                if let image = response.result.value {
+                    cell.imgViewContent.image = image
+                }
+            })
+        }
         
         return cell
     }
