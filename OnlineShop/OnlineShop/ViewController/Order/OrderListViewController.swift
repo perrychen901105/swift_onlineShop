@@ -12,6 +12,7 @@ class OrderListViewController: UIViewController {
 
     var orderListViewModel: RequestOrder?
     
+    @IBOutlet weak var viewNoOrder: UIView!
     
     @IBOutlet weak var tbViewContent: UITableView!
     
@@ -19,11 +20,6 @@ class OrderListViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "订单列表"
         self.orderListViewModel = RequestOrder()
-        self.orderListViewModel?.getOrderList([:], success: { 
-            self.tbViewContent.reloadData()
-            }, failure: { (str) in
-                
-        })
         // Do any additional setup after loading the view.
     }
 
@@ -33,6 +29,18 @@ class OrderListViewController: UIViewController {
     }
     
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.orderListViewModel?.getOrderList([:], success: {
+            self.viewNoOrder.hidden = true
+            if self.orderListViewModel?.arrOrderList.count == 0 {
+                self.viewNoOrder.hidden = false
+            }
+            
+            self.tbViewContent.reloadData()
+            }, failure: { (str) in
+        })
+    }
     
     // MARK: - Navigation
 

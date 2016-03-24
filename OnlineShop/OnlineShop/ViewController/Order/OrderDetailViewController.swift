@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class OrderDetailViewController: UIViewController {
 
@@ -18,6 +20,7 @@ class OrderDetailViewController: UIViewController {
         super.viewDidLoad()
         self.orderListViewModel = RequestOrder()
         self.getOrderDetail()
+        self.navigationItem.title = "订单详情"
         // Do any additional setup after loading the view.
     }
 
@@ -36,6 +39,27 @@ class OrderDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func actionCompleteOrder(sender: UIButton) {
+        let alertController: UIAlertController = UIAlertController(title: "是否确认订单已完成", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (sender) -> Void in
+            if let modelOrder = self.orderListViewModel, orderId = self.orderId {
+                modelOrder.completeOrder(["orderID":orderId], success: {
+                    self.tbViewContent.reloadData()
+                    self.navigationController?.popViewControllerAnimated(true)
+                    }, failure: { (str) in
+                        
+                })
+            }
+        })
+        alertController.addAction(alertAction)
+        
+        let alertCancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (sender) -> Void in
+            
+        })
+        alertController.addAction(alertCancelAction)
+        self.presentViewController(alertController, animated: true, completion: { () -> Void in
+        })
+    }
     
     // MARK: - Navigation
 
@@ -52,8 +76,6 @@ class OrderDetailViewController: UIViewController {
             vcProduct.navigationItem.title = model.productName
         }
     }
-    
-
 }
 
 extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -62,7 +84,15 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCellWithIdentifier("ProductListCell") as! ProductListCell
         let model: OrderProductModel = self.orderListViewModel!.arrOrderDetail[indexPath.row]
         cell.lblTitle.text = model.productName
-        cell.lblPrice.text = model.price
+        cell.lblPrice.text = "￥ \(model.price)"
+        cell.lblSpec.text = model.spec
+        if model.imgUrl.characters.count > 0 {
+            Alamofire.request(.GET, model.imgUrl).responseImage(completionHandler: { (response) in
+                if let image = response.result.value {
+                    cell.imgViewContent.image = image
+                }
+            })
+        }
         return cell
     }
     

@@ -13,6 +13,7 @@ class ShoppingCartCell: UITableViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var lblSpec: UILabel!
     
     @IBOutlet weak var btnRemoveCart: UIButton!
     

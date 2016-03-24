@@ -133,4 +133,20 @@ extension RequestOrder {
             }
         }
     }
+    
+    /**
+     *  完成订单接口
+     */
+    func completeOrder(parameters: [String: AnyObject], success:()->Void, failure:(str: String) -> Void) -> Void {
+        Alamofire.request(.POST, HttpMacro.getRequestURL(.CompleteOrder)(), parameters: parameters).responseJSON { (resObj) -> Void in
+            guard let resValue = resObj.result.value else {
+                return
+            }
+            if Int(resValue["success"] as! NSNumber) == 0{
+                self.arrOrderDetail.removeAll()
+                success()
+            } else {
+            }
+        }
+    }
 }

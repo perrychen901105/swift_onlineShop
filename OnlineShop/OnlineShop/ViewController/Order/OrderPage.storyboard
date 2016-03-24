@@ -8,7 +8,7 @@
         <!--Order List View Controller-->
         <scene sceneID="ClC-hJ-I8W">
             <objects>
-                <viewController storyboardIdentifier="OrderListViewController" automaticallyAdjustsScrollViewInsets="NO" id="vTT-EC-ulM" customClass="OrderListViewController" customModule="OnlineShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderListViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="vTT-EC-ulM" customClass="OrderListViewController" customModule="OnlineShop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="43L-x5-YyX"/>
                         <viewControllerLayoutGuide type="bottom" id="gSe-Mn-gza"/>
@@ -79,18 +79,39 @@
                                     <outlet property="delegate" destination="vTT-EC-ulM" id="4I5-1W-ihQ"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYa-IG-B8i">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有订单哦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1x-t4-U8V">
+                                        <rect key="frame" x="248" y="235" width="105" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="N1x-t4-U8V" firstAttribute="centerX" secondItem="SYa-IG-B8i" secondAttribute="centerX" id="aec-Ub-zm7"/>
+                                    <constraint firstItem="N1x-t4-U8V" firstAttribute="centerY" secondItem="SYa-IG-B8i" secondAttribute="centerY" id="xiW-bZ-IVi"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SYa-IG-B8i" firstAttribute="leading" secondItem="XAo-yR-fJ8" secondAttribute="leading" id="0w1-gm-tTi"/>
                             <constraint firstItem="mRa-DP-yEy" firstAttribute="top" secondItem="43L-x5-YyX" secondAttribute="bottom" id="79f-Ph-QtV"/>
+                            <constraint firstItem="gSe-Mn-gza" firstAttribute="top" secondItem="SYa-IG-B8i" secondAttribute="bottom" id="EQB-0J-Qdn"/>
                             <constraint firstAttribute="trailing" secondItem="mRa-DP-yEy" secondAttribute="trailing" id="Q5P-zm-Ztd"/>
+                            <constraint firstAttribute="trailing" secondItem="SYa-IG-B8i" secondAttribute="trailing" id="S9V-Az-7IY"/>
                             <constraint firstItem="mRa-DP-yEy" firstAttribute="leading" secondItem="XAo-yR-fJ8" secondAttribute="leading" id="a2Y-DE-HNH"/>
+                            <constraint firstItem="SYa-IG-B8i" firstAttribute="top" secondItem="43L-x5-YyX" secondAttribute="bottom" id="jVq-GT-uBP"/>
                             <constraint firstItem="gSe-Mn-gza" firstAttribute="top" secondItem="mRa-DP-yEy" secondAttribute="bottom" id="tIS-mj-HSM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gAu-Kk-bZ7"/>
                     <connections>
                         <outlet property="tbViewContent" destination="mRa-DP-yEy" id="QGi-zj-oHo"/>
+                        <outlet property="viewNoOrder" destination="SYa-IG-B8i" id="tZU-7K-sjG"/>
                         <segue destination="QeF-Du-hen" kind="show" id="wnV-BC-XVi"/>
                         <segue destination="UIM-f2-1Mz" kind="show" identifier="segueOrderDetail" id="X3X-a1-JbD"/>
                     </connections>
@@ -112,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cnQ-1P-wjw">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="437"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductListCell" rowHeight="100" id="dzg-d7-f5Y" customClass="ProductListCell" customModule="OnlineShop" customModuleProvider="target">
@@ -143,14 +164,22 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXK-qW-QsM">
+                                                    <rect key="frame" x="98" y="73" width="31" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ypK-vE-1jc" firstAttribute="leading" secondItem="iWK-L5-RUs" secondAttribute="leading" constant="10" id="6f1-Dd-Hkh"/>
                                                 <constraint firstAttribute="trailing" secondItem="7yZ-Ln-azk" secondAttribute="trailing" constant="13" id="NiR-8z-t8q"/>
+                                                <constraint firstItem="qXK-qW-QsM" firstAttribute="leading" secondItem="ypK-vE-1jc" secondAttribute="trailing" constant="8" id="QnD-e9-ben"/>
                                                 <constraint firstAttribute="bottom" secondItem="7yZ-Ln-azk" secondAttribute="bottom" constant="10" id="VEN-dU-fgf"/>
                                                 <constraint firstItem="ypK-vE-1jc" firstAttribute="top" secondItem="iWK-L5-RUs" secondAttribute="top" constant="10" id="Yq5-aw-SlV"/>
                                                 <constraint firstItem="51a-ah-Trc" firstAttribute="leading" secondItem="ypK-vE-1jc" secondAttribute="trailing" constant="8" id="aNu-vF-sfY"/>
                                                 <constraint firstAttribute="trailing" secondItem="51a-ah-Trc" secondAttribute="trailing" constant="13" id="bpF-CB-TQH"/>
+                                                <constraint firstAttribute="bottom" secondItem="qXK-qW-QsM" secondAttribute="bottom" constant="11" id="bzh-3Z-7eB"/>
                                                 <constraint firstItem="51a-ah-Trc" firstAttribute="top" secondItem="iWK-L5-RUs" secondAttribute="top" constant="14" id="vHk-Kc-Gu2"/>
                                                 <constraint firstAttribute="bottom" secondItem="ypK-vE-1jc" secondAttribute="bottom" constant="10" id="x9b-Xj-0wf"/>
                                             </constraints>
@@ -158,6 +187,7 @@
                                         <connections>
                                             <outlet property="imgViewContent" destination="ypK-vE-1jc" id="xNR-29-jZG"/>
                                             <outlet property="lblPrice" destination="7yZ-Ln-azk" id="4A1-Kr-t6C"/>
+                                            <outlet property="lblSpec" destination="qXK-qW-QsM" id="IFZ-B2-p4M"/>
                                             <outlet property="lblTitle" destination="51a-ah-Trc" id="hms-P5-UvX"/>
                                             <segue destination="Klc-0j-bYH" kind="show" identifier="segueProductDetail" id="oRf-g7-a1J"/>
                                         </connections>
@@ -168,12 +198,22 @@
                                     <outlet property="delegate" destination="UIM-f2-1Mz" id="roj-fv-t7M"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4S-pc-wVb">
+                                <rect key="frame" x="270" y="513" width="60" height="30"/>
+                                <state key="normal" title="完成订单"/>
+                                <connections>
+                                    <action selector="actionCompleteOrder:" destination="UIM-f2-1Mz" eventType="touchUpInside" id="KY1-dl-Gra"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cnQ-1P-wjw" firstAttribute="top" secondItem="Hs7-Bd-DFK" secondAttribute="bottom" id="E6d-PJ-2t8"/>
+                            <constraint firstItem="GwR-3a-EBH" firstAttribute="top" secondItem="J4S-pc-wVb" secondAttribute="bottom" constant="8" id="Ihc-bq-OlB"/>
                             <constraint firstAttribute="trailing" secondItem="cnQ-1P-wjw" secondAttribute="trailing" id="PcJ-rj-DdP"/>
-                            <constraint firstItem="GwR-3a-EBH" firstAttribute="top" secondItem="cnQ-1P-wjw" secondAttribute="bottom" id="Yr4-Og-HWH"/>
+                            <constraint firstItem="GwR-3a-EBH" firstAttribute="top" secondItem="cnQ-1P-wjw" secondAttribute="bottom" constant="50" id="Yr4-Og-HWH"/>
+                            <constraint firstItem="J4S-pc-wVb" firstAttribute="centerX" secondItem="jAf-K2-RPL" secondAttribute="centerX" id="aKI-Mm-fS2"/>
+                            <constraint firstItem="J4S-pc-wVb" firstAttribute="top" secondItem="cnQ-1P-wjw" secondAttribute="bottom" constant="12" id="oQf-5b-4dE"/>
                             <constraint firstItem="cnQ-1P-wjw" firstAttribute="leading" secondItem="jAf-K2-RPL" secondAttribute="leading" id="qA4-oI-2Ce"/>
                         </constraints>
                     </view>
@@ -196,7 +236,7 @@
         <!--地址列表-->
         <scene sceneID="x1r-50-ere">
             <objects>
-                <viewController storyboardIdentifier="AddressListViewController" title="地址列表" automaticallyAdjustsScrollViewInsets="NO" id="QeF-Du-hen" customClass="AddressListViewController" customModule="OnlineShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddressListViewController" title="地址列表" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="QeF-Du-hen" customClass="AddressListViewController" customModule="OnlineShop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4b6-ed-s6I"/>
                         <viewControllerLayoutGuide type="bottom" id="jIW-Go-Xr4"/>
@@ -312,7 +352,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入收获地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-iA-KAL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入收货地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-iA-KAL">
                                 <rect key="frame" x="20" y="184" width="105" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

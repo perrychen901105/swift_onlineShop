@@ -59,12 +59,14 @@ class OrderProductModel: BaseModel, Mappable {
     var productName: String
     var price: String
     var productId: String
+    var spec: String
     
     required init?(_ map: Map) {
         imgUrl = ""
         productName = ""
         price = ""
         productId = ""
+        spec = ""
     }
     
     func mapping(map: Map) {
@@ -72,6 +74,7 @@ class OrderProductModel: BaseModel, Mappable {
         productName <- map["products.name"]
         imgUrl <- map["products.imgUrl"]
         price <- map["products.original_price"]
+        spec <- map["products.specification"]
     }
 }
 

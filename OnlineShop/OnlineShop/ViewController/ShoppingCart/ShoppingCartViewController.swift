@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import JGProgressHUD
+import Alamofire
+import AlamofireImage
 
 class ShoppingCartViewController: UIViewController {
 
@@ -28,8 +30,13 @@ class ShoppingCartViewController: UIViewController {
         self.navigationItem.title = "购物车"
         
         self.managedContext = appDelegate.managedObjectContext
-        self.getCartList()
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getCartList()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +58,11 @@ class ShoppingCartViewController: UIViewController {
 
     @IBAction func submitCartAction(sender: AnyObject) {
         if self.curShipAddress?.addressId == nil {
+            let loading = JGProgressHUD(style: .Dark)
+            loading.textLabel.text = "请选择收货地址!"
+            loading.indicatorView = JGProgressHUDErrorIndicatorView()
+            loading.showInView(self.view)
+            loading.dismissAfterDelay(0.5)
             return
         }
         let glManager: GlobalManager = GlobalManager.sharedInstance
@@ -127,18 +139,34 @@ class ShoppingCartViewController: UIViewController {
     
     func removeCart(sender: UIButton) {
         print(sender.tag)
+//        let fetchRequest = NSFetchRequest(entityName: "ShoppingCart")
+        let model: ShoppingCart = self.cartListArr![sender.tag]
+        do {
+            self.managedContext!.deleteObject(model)
+            try self.managedContext!.save()
+            self.cartListArr?.removeAtIndex(sender.tag)
+            self.tbViewContent.reloadData()
+        } catch let error as NSError {
+            print("Could not delete \(error), \(error.userInfo)")
+        }
     }
-    
-    /*
+
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "segueProductDetail" {
+            let vcProduct = segue.destinationViewController as! ProductDetailViewController
+            let cell :ShoppingCartCell = (sender as? ShoppingCartCell)!
+            let idxPath : NSIndexPath = self.tbViewContent.indexPathForCell(cell)!
+            let model: ShoppingCart = self.cartListArr![idxPath.row]
+            vcProduct.productId = Int(model.productId!)
+            vcProduct.navigationItem.title = model.name
+        }
     }
-    */
-
 }
 
 extension ShoppingCartViewController: UITableViewDataSource, UITableViewDelegate {
@@ -147,9 +175,17 @@ extension ShoppingCartViewController: UITableViewDataSource, UITableViewDelegate
 
         let cart = self.cartListArr![indexPath.row] 
         cell.lblName.text = cart.name
-        cell.lblPrice.text = cart.price?.stringValue
+        cell.lblPrice.text = "￥ \((cart.price?.stringValue)!)"
+        cell.lblSpec.text = cart.spec
+        if cart.imgUrl!.characters.count > 0 {
+            Alamofire.request(.GET, (cart.imgUrl)!).responseImage(completionHandler: { (response) in
+                if let image = response.result.value {
+                    cell.imgView.image = image
+                }
+            })
+        }
         cell.btnRemoveCart.tag = indexPath.row
-        cell.btnRemoveCart.addTarget(self, action: Selector("removeCart:"), forControlEvents: .TouchUpInside)
+        cell.btnRemoveCart.addTarget(self, action: #selector(ShoppingCartViewController.removeCart(_:)), forControlEvents: .TouchUpInside)
         return cell
     }
     
