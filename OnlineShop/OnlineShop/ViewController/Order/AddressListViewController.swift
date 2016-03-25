@@ -33,7 +33,7 @@ class AddressListViewController: UIViewController {
     }
     
     func addNavi() {
-        let naviAdd: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("actionAddAddress"))
+        let naviAdd: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(AddressListViewController.actionAddAddress))
         self.navigationItem.rightBarButtonItem = naviAdd
     }
 

@@ -9,7 +9,7 @@
         <scene sceneID="ceZ-5G-v1Y">
             <objects>
                 <navigationController storyboardIdentifier="UserInfo" id="c4T-3k-kiz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="用户" id="JX0-zU-eaK"/>
+                    <tabBarItem key="tabBarItem" title="用户" image="ic_btn_mine" selectedImage="ic_btn_minegreen_selected" id="JX0-zU-eaK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b06-9l-za4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -38,13 +38,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="用户名:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOB-mS-pBz">
                                 <rect key="frame" x="27" y="113" width="56" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="手机号:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gI-No-g63">
                                 <rect key="frame" x="27" y="168" width="56" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYF-HT-I78">
@@ -53,7 +53,7 @@
                                     <constraint firstAttribute="height" constant="30" id="fsJ-1H-kw2"/>
                                 </constraints>
                                 <state key="normal" title="我的订单">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="myOrderAction:" destination="hbk-JB-oPc" eventType="touchUpInside" id="kJW-9G-O3A"/>
@@ -65,7 +65,7 @@
                                     <constraint firstAttribute="height" constant="30" id="7Yg-hP-mvv"/>
                                 </constraints>
                                 <state key="normal" title="我的收货地址">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="myAddressAction:" destination="hbk-JB-oPc" eventType="touchUpInside" id="HBk-tw-Fov"/>
@@ -88,7 +88,7 @@
                                     <constraint firstAttribute="height" constant="21" id="KO7-2T-8a2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjS-eD-5Sj">
@@ -97,7 +97,7 @@
                                     <constraint firstAttribute="height" constant="21" id="95M-8F-iRc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -171,4 +171,8 @@
             <point key="canvasLocation" x="901" y="193"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_btn_mine" width="23" height="23"/>
+        <image name="ic_btn_minegreen_selected" width="23" height="23"/>
+    </resources>
 </document>

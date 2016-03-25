@@ -9,7 +9,7 @@
         <scene sceneID="BtS-Xf-hmk">
             <objects>
                 <navigationController storyboardIdentifier="HomePage" id="93i-9Q-if3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="Fiv-KW-nLd"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="ic_btn_home" selectedImage="ic_btn_homepressed" id="Fiv-KW-nLd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WG7-St-tnZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -136,7 +136,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6F-tD-wSq">
                                                     <rect key="frame" x="98" y="73" width="31" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -268,4 +268,8 @@
             <point key="canvasLocation" x="1573" y="329"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_btn_home" width="23" height="23"/>
+        <image name="ic_btn_homepressed" width="23" height="23"/>
+    </resources>
 </document>

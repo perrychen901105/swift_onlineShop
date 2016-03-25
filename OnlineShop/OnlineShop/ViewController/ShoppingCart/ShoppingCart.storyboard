@@ -9,7 +9,7 @@
         <scene sceneID="RLz-1Z-doZ">
             <objects>
                 <navigationController storyboardIdentifier="ShoppingCart" id="d1C-7U-vjN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="购物车" id="9Em-wO-pI4"/>
+                    <tabBarItem key="tabBarItem" title="购物车" image="ic_btn_shopping" selectedImage="ic_btn_shoppingpressed" id="9Em-wO-pI4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CTB-vj-Vno">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -89,7 +89,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="KXC-xJ-Aoc"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -196,4 +196,8 @@
             <point key="canvasLocation" x="959" y="214"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_btn_shopping" width="27" height="23"/>
+        <image name="ic_btn_shoppingpressed" width="27" height="23"/>
+    </resources>
 </document>

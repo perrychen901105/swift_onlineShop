@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NetworkActivityIndicatorManager.sharedManager.isEnabled = true
         NetworkActivityIndicatorManager.sharedManager.startDelay = 1.0
         NetworkActivityIndicatorManager.sharedManager.completionDelay = 0.2
+        self.window?.tintColor = UIColor.orangeColor()
         return true
     }
 
