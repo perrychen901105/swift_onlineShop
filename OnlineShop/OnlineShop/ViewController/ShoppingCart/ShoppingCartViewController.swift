@@ -50,6 +50,7 @@ class ShoppingCartViewController: UIViewController {
             let results = try self.managedContext?.executeFetchRequest(request) as! [ShoppingCart]
             if results.count > 0 {
                 self.cartListArr = results
+                self.tbViewContent.reloadData()
             }
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
