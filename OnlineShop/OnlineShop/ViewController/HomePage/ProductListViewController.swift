@@ -74,7 +74,7 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCellWithIdentifier("ProductListCell") as! ProductListCell
         let model: ProductModel = self.homeViewModel!.products![indexPath.row]
         cell.lblTitle.text = model.name
-        cell.lblPrice.text = model.original_price
+        cell.lblPrice.text = String("￥ \(model.original_price)")
         cell.lblSpec.text = model.spec
         if model.imgUrl.characters.count > 0 {
             Alamofire.request(.GET, model.imgUrl).responseImage(completionHandler: { (response) in

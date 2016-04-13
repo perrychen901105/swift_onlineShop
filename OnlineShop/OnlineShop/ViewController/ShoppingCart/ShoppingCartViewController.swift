@@ -139,8 +139,6 @@ class ShoppingCartViewController: UIViewController {
     }
     
     func removeCart(sender: UIButton) {
-        print(sender.tag)
-//        let fetchRequest = NSFetchRequest(entityName: "ShoppingCart")
         let model: ShoppingCart = self.cartListArr![sender.tag]
         do {
             self.managedContext!.deleteObject(model)

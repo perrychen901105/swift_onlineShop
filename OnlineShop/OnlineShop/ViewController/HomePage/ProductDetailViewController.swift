@@ -76,7 +76,6 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func addToCart(sender: UIButton) {
-        
         if let detail = self.homeViewModel?.productDetail {
             let dogEntity = NSEntityDescription.entityForName("ShoppingCart",
                 inManagedObjectContext: self.managedContext!)
